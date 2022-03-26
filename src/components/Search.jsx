@@ -7,9 +7,9 @@ export default function Search({searchQuery, setSearchQuery, gender, setGender})
       <InputGroup sx={{width: 'fit-content'}} mb='5'>
           <InputLeftElement children={<BiSearch/>} pointerEvents='none'/>
           <Input size='md' placeholder='Search for a name' width='auto' value={searchQuery} onChange={(e)=>setSearchQuery(e.target.value)}/>
-        <Button mx='2' onClick={() => setGender('All')}>All</Button>
-        <Button mx='2' onClick={() => setGender('m')}><BiFemaleSign/></Button>
-        <Button mx='2' onClick={() => setGender('f')}><BiMaleSign/></Button>
+        <Button disabled={gender === 'All'} mx='2' onClick={() => setGender('All')}>All</Button>
+        <Button disabled={gender === 'm'} mx='2' onClick={() => setGender('m')}><BiFemaleSign/></Button>
+        <Button disabled={gender === 'f'} mx='2' onClick={() => setGender('f')}><BiMaleSign/></Button>
       </InputGroup>
   )
 }
