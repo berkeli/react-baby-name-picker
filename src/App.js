@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} gender={gender} setGender={setGender}/>
-      <Favourites favouriteNames={favouriteNames} names={names.filter(e=> favouriteNames.includes(e.id))} addOrRemoveFavourites={addOrRemoveFavourites}/>
+      {favouriteNames.length > 0 && <Favourites favouriteNames={favouriteNames} names={names.filter(e=> favouriteNames.includes(e.id))} addOrRemoveFavourites={addOrRemoveFavourites}/>}
       <Divider mt='3' mb='3'/>
       <ListNames names={namesFiltered} favouriteNames={favouriteNames} addOrRemoveFavourites={addOrRemoveFavourites}/>
     </div>
